@@ -28,7 +28,7 @@ As [Developer Pete](https://github.com/codymccoderson) remarks:
 
 - Tracks a users’ logged in status through cookie sessions.
 
-- Modal pop-ups based on click events.
+- ~~Modal pop-ups based on click events.~~
 
 
 ## Technology:
@@ -36,34 +36,34 @@ As [Developer Pete](https://github.com/codymccoderson) remarks:
 Bingemasters also uses a number of open sources projects to work properly:
 
 - Front-End:
--- HTML
--- CSS
--- JS
--- React
+  - HTML
+  - CSS
+  - JS
+  - React
 
 - Back-End:
--- Node.js
--- Express
--- MongoDB
+  - Node.js
+  - Express
+  - MongoDB
 
 - Notable Node Modules | Libraries
--- Axios
--- Cookie-Session
--- Http-Proxy-Middleware
--- Mongoose
--- Passport
--- Passport Google OAuth 2.0
--- React-Modal
--- React-Redux
--- React-Dom
--- React-Router-Dom
--- React-Redux
--- Redux-Thunk
--- Styled-Components
+  - Axios
+  - Cookie-Session
+  - Http-Proxy-Middleware
+  - Mongoose
+  - Passport
+  - Passport Google OAuth 2.0
+  - React-Modal
+  - React-Redux
+  - React-Dom
+  - React-Router-Dom
+  - React-Redux
+  - Redux-Thunk
+  - Styled-Components
 
 - API:
--- TMDB
---- https://developers.themoviedb.org/3/getting-started/introduction
+  - TMDB
+    - https://developers.themoviedb.org/3/getting-started/introduction
 
 ## Installation
 
@@ -104,16 +104,12 @@ $ npm start
 - Other TOP SECRET features.
 
 ## Development Repos: 
-Front-End 
-https://github.com/codymccoderson/bingemasters-mini/tree/newbackgroundswag/src
+Front-End: https://github.com/codymccoderson/bingemasters-mini/tree/newbackgroundswag/src
 
-Back-End
-https://github.com/codymccoderson/bingemasters-backend
+Back-End: https://github.com/codymccoderson/bingemasters-backend
 
 ## Developers:
 
-Front-End : 'Style God
-https://github.com/codymccoderson
+Front-End aka 'Style God: https://github.com/codymccoderson
 
-Back-End
-https://github.com/TheCaptainFalcon
+Back-End: https://github.com/TheCaptainFalcon
