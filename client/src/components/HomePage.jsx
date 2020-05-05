@@ -27,6 +27,31 @@ const StyledStartGame = styled.div`
         position: relative;
         top: 1rem;    
     }
+
+    @media (width: 23.438rem) and (height: 50.75rem) {
+        position: relative;
+        top: 2.5rem;
+    }
+
+    @media (width: 23.438rem) and (height: 41.688rem) {
+        position: relative;
+        top: -1rem;
+    }
+
+    @media (width: 22.5rem) and (height: 40rem) {
+        position: relative;
+        top: -1.5rem;
+    }
+
+    @media screen and (max-width: 20rem) {
+        position: relative;
+        top: 3rem;
+    }
+
+    @media (width: 20rem) and (height: 35.5rem) {
+        position: relative;
+        top: -1rem;
+    }
 `
 
 const StartGameTitle = styled.h1`
@@ -41,36 +66,25 @@ const StartGameTitle = styled.h1`
     }
 
     @media screen and (max-width: 26.563rem) {
-        font-size: 2.5rem;
+        font-size: 3rem;
         position: relative;
-        right: 0.35rem;
+        top: 0.4rem;
     }
-
-    @media screen and (max-width: 25.688rem) {
-        position: relative;
-        right: 0.2rem;
-    }
-
+    
     @media screen and (max-width: 23.438rem) {
         position: relative;
-        right: 1rem;
-    }
-
-    @media screen and (max-width: 22.5rem) {
-        position: relative;
-        right: 1.5rem;
+        top: 0.6rem;
     }
 
     @media screen and (max-width: 20rem) {
-        font-size: 2.25rem;
+        font-size: 2.5rem;
     }    
-    `;
+`;
 
 const ImageWrapper = styled.div`
 
     position: relative;
     bottom: 2rem;
-    right: 0.2rem;
 
     .theActorImg {
         border-radius: 0.625rem;
@@ -87,6 +101,48 @@ const ImageWrapper = styled.div`
             position: relative;
             top: 0rem;
         }
+
+        @media (width: 48rem) and (height: 47.938rem) {
+            position: relative;
+            top: -0.5rem;
+        }
+
+        @media (width: 26.563rem) and (height: 47.938rem) {
+            position: relative;
+            top: 0.8rem;
+        }
+        
+        @media (width: 25.875rem) and (height: 46rem) {
+            position: relative;
+            top: 0.8rem;
+        }
+
+        @media (width: 25.688rem) and (height: 51.438rem) {
+            position: relative;
+            top: 0.8rem;
+        }
+
+        @media (width: 25.688rem) and (height: 45.688rem) {
+            position: relative;
+            top: 0.8rem;
+        }
+
+        @media screen and (max-width: 23.438rem) {
+            position: relative;
+            top: 0.8rem;
+        }
+
+        @media screen and (max-width: 20rem) {
+            width: 16rem;
+            height: 16rem;
+            position: relative;
+            top: 1rem;
+        }
+
+        @media (width: 20rem) and (height: 35.5rem) {
+            width: 14rem;
+            height: 14rem;    
+        }
     }
 `
 
@@ -100,6 +156,14 @@ const ButtonLine = styled.div`
         flex-direction: column;
         position: relative;
         right: 0rem;    
+    }
+
+    @media (width: 48rem) and (height: 64rem) {
+        flex-direction: row;
+    }
+
+    @media (width: 48rem) and (height: 47.938rem) {
+        flex-direction: row;
     }
 
 `
