@@ -6,6 +6,7 @@ import tv_static2 from '../tv_static2.jpg';
 import { connect } from 'react-redux';
 import SelectDifficulty from './SelectDifficulty';
 import silhouette from '../silhouette.jpg';
+import PostScore from './PostScore';
 
 const StartGameBackground = styled.div`
     background: url(${tv_static2}) no-repeat center center fixed;

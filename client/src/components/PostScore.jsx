@@ -1,14 +1,11 @@
 import React, { Component } from 'react';
-import Modal from '../components/Modal';
 import styled from 'styled-components';
 import another_retro_tv from '../another_retro_tv.png';
-import ReactModal from 'react-modal';
-import './PostScore.css';
 import tv_static2 from '../tv_static2.jpg';
 import HomePage from '../components/HomePage';
-import { useHistory } from 'react-router-dom';
 
-const HowToPlayBackground = styled.div`
+const PostScoreBackground = styled.div`
+
     background: url(${another_retro_tv}) no-repeat center center fixed;
     background-size: 80vw 92vh;
     height: 100vh;
@@ -18,17 +15,17 @@ const HowToPlayBackground = styled.div`
         background: url(${tv_static2}) no-repeat center center fixed;
         background-size: cover;
         height: 100vh;
-
     }
 `
+
 const CardWrapper = styled.div`
 
     @media screen and (max-width: 64rem) {
         display: flex;
         align-items: center;
         flex-flow: column;
-        width: 30rem;
-        height: 36rem;
+        width: 28rem;
+        height: 32rem;
         margin: 0 auto;
         position: relative;
         top: 8rem;
@@ -59,11 +56,11 @@ const CardWrapper = styled.div`
     }
     
     @media (width: 48rem) and (height: 64rem) {
-        width: 32rem;
-        height: 40rem;
+        width: 28rem;
+        height: 28rem;
         position: relative;
-        top: 11rem;
-        right: 2rem;
+        top: 15rem;
+        right: 0rem;
     }
 
     @media screen and (max-width: 44rem) {
@@ -89,9 +86,9 @@ const CardWrapper = styled.div`
     @media screen and (max-width: 26.563rem) {
         margin: 0 1.3rem;
         position: relative;
-        top: 3rem;
+        top: 8rem;
         width: 25rem;
-        height: 42rem;   
+        height: 30rem;   
     }
 
     @media (width: 26.563rem) and (height: 47.625rem) {
@@ -102,9 +99,9 @@ const CardWrapper = styled.div`
 
     @media (width: 25.875rem) and (height: 46rem) {
         position: relative;
-        top: 0.5rem;
+        top: 6rem;
         right: 0.9rem;
-        height: 45rem;
+        height: 25rem;
     }
 
     @media screen and (max-width: 25.688rem) {
@@ -117,15 +114,15 @@ const CardWrapper = styled.div`
 
     @media (width: 25.688rem) and (height: 51.438rem) {
         position: relative;
-        top: 1rem;
-        height: 49rem;
+        top: 10rem;
+        height: 26rem;
     }
 
     @media (width: 25.688rem) and (height: 45.688rem) {
         position: relative;
-        top: 1.2rem;
+        top: 8rem;
         right: 0.6rem;
-        height: 43.5rem;
+        height: 26rem;
     }
 
     @media screen and (max-width: 23.438rem) {
@@ -138,9 +135,15 @@ const CardWrapper = styled.div`
 
     @media (width: 23.438rem) and (height: 50.75rem) {
         position: relative;
-        top: 1rem;
+        top: 10rem;
         right: 0.6rem;
-        height: 49rem;
+        height: 25rem;
+    }
+
+    @media (width: 23.438rem) and (height: 47.875rem) {
+        position: relative;
+        top: 9rem;
+        height: 26rem;
     }
 
     @media (width: 23.438rem) and (height: 47.625rem) {
@@ -152,9 +155,9 @@ const CardWrapper = styled.div`
 
     @media (width: 23.438rem) and (height: 41.688rem) {
         position: relative;
-        top: 0.9rem;
+        top: 6rem;
         right: 0.6rem;
-        height: 39.8rem;
+        height: 25rem;
     }
 
     @media screen and (max-width: 22.5rem) {
@@ -164,12 +167,18 @@ const CardWrapper = styled.div`
         top: 1rem;  
     }
 
+    @media (width: 22.5rem) and (height: 40rem) {
+        position: relative;
+        top: 6rem;
+        height: 25rem;
+    }
+
     @media screen and (max-width: 20rem) {
         margin: 0 0.9rem;
         position: relative;
-        top: 3rem;
+        top: 10rem;
         width: 19.2rem;
-        height: 42rem;   
+        height: 24rem;   
     }
 
     @media (width: 20rem) and (height: 47.625rem) {
@@ -180,13 +189,13 @@ const CardWrapper = styled.div`
 
     @media (width: 20rem) and (height: 35.5rem) {
         position: relative;
-        top: 0.5rem;
-        height: 34.5rem;
+        top: 5rem;
+        height: 24rem;
     }
     
 `
 
-const StyledHowToPlay = styled.div`
+const StyledCongrats = styled.div`
     display: flex;
     align-items: center;
     flex-flow: column;
@@ -194,7 +203,7 @@ const StyledHowToPlay = styled.div`
     height: 43.75rem;
     margin: 0 auto;
     position: relative;
-    top: 7.8rem;
+    top: 10rem;
     right: 9.375rem;
 
     @media screen and (max-width: 90rem) {
@@ -249,11 +258,11 @@ const StyledHowToPlay = styled.div`
 
     @media screen and (max-width: 64rem) {
         position: relative;
-        top: 1rem;
-        right: -0.8rem;
+        top: 3rem;
+        right: -0.4rem;
         margin: 0 22.5rem;
-        width: 28rem;
-        height: 28rem;
+        width: 24rem;
+        height: 24rem;
     }
 
     @media (width: 64rem) and (height: 85.375rem) {
@@ -263,22 +272,15 @@ const StyledHowToPlay = styled.div`
         width: 30rem;
     }
 
-    @media (width: 64rem) and (height: 63.5rem) {
-        position: relative;
-        top: 2.5rem;
-        left: 0.2rem;
-        width: 30rem;
-    }
-
     @media screen and (max-width: 48rem) {
         margin: 0 20rem;
-        width: 28.75rem;
-        height: 28.75rem;
+        width: 24rem;
+        height: 24rem;
     }
 
     @media (width: 48rem) and (height: 64rem) {
         position: relative;
-        top: -1rem;
+        top: 1.5rem;
     }
 
     @media (width: 48rem) and (height: 47.625rem) {
@@ -307,7 +309,7 @@ const StyledHowToPlay = styled.div`
     @media screen and (max-width: 26.563rem) {
         position: relative;
         top: 3rem;
-        width: 22rem;
+        width: 20rem;
     }
 
     @media (width: 26.563rem) and (height: 47.625rem) {
@@ -347,14 +349,21 @@ const StyledHowToPlay = styled.div`
         top: -0.5rem;
     }
 
+    @media (width: 22.5rem) and (height: 40rem) {
+        position: relative;
+        top: 1.5rem;
+    }
+
     @media screen and (max-width: 20rem) {
+        position: relative;
+        top: 2rem;
         width: 17rem;
     }
 `;
 
-const HowToPlayTitle = styled.h1`
+const CongratsTitle = styled.h1`
     font-family: 'Retro', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 1.8rem;
+    font-size: 3rem;
     text-align: center;
 
     @media screen and (max-width: 87.5rem) {
@@ -386,14 +395,33 @@ const HowToPlayTitle = styled.h1`
         right: 0.2rem;
     }
 
-    @media (width: 20rem) and (height: 35.5rem) {
+    @media (width: 23.438rem) and (height: 50.75rem) {
         font-size: 2rem;
+    }
+
+    @media (width: 23.438rem) and (height: 47.875rem) {
+        font-size: 2rem;
+    }
+
+    @media (width: 23.438rem) and (height: 41.688rem) {
+        font-size: 2rem;
+    }
+
+    @media (width: 22.5rem) and (height: 40rem) {
+        font-size: 2rem;
+    }
+
+    @media screen and (max-width: 20rem) {
+        font-size: 1.5rem;    
+    }
+    @media (width: 20rem) and (height: 35.5rem) {
+        font-size: 1.5rem;
     }
 `;
 
-const WhatTheGameIs = styled.h2`
+const ScoreSubmit = styled.h2`
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 1.2rem;
+    font-size: 2rem;
     position: relative;
     bottom: 1.5rem;
     font-weight: bolder;
@@ -401,7 +429,7 @@ const WhatTheGameIs = styled.h2`
     text-shadow: -1.1px 0 black, 0 1.1px black, 1.1px 0 black, 0 -1.1px black;
 
     @media screen and (max-width: 64rem) {
-        font-size: 1rem;
+        font-size: 1.5rem;
     }
 
     @media screen and (max-width: 53.125rem) {
@@ -409,6 +437,14 @@ const WhatTheGameIs = styled.h2`
     }
 
     @media (width: 48rem) and (height: 64rem) {
+        position: relative;
+        right: 0.6rem;
+        font-size: 1.5rem;
+    }
+
+    @media (width: 48rem) and (height: 47.875rem) {
+        position: relative;
+        right: 0.6rem;
         font-size: 1.125rem;
     }
 
@@ -420,30 +456,66 @@ const WhatTheGameIs = styled.h2`
         font-size: 0.8rem;
     }
 
+    @media (width: 26.563rem) and (height: 47.875rem) {
+        font-size: 1.125rem;
+        position: relative;
+        right: 0.4rem;       
+    }
+
     @media (width: 26.563rem) and (height: 47.625rem) {
         font-size: 1.125rem;
     }
 
     @media (width: 25.875rem) and (height: 46rem) {
-        font-size: 1.125rem;
+        position: relative;
+        right: 0.6rem;
+        font-size: 1.25rem;
     }
 
     @media (width: 25.688rem) and (height: 51.438rem) {
+        position: relative;
+        right: 0.6rem;
         font-size: 1.125rem;
     }
 
     @media (width: 25.688rem) and (height: 45.688rem) {
-        font-size: 1rem;
+        font-size: 1.125rem;
         position: relative;
         right: 0.6rem;
     }
 
     @media (width: 23.438rem) and (height: 50.75rem) {
-        font-size: 1rem;
+        position: relative;
+        right: 0.6rem;
+        font-size: 1.125rem;
     }
 
     @media (width: 23.438rem) and (height: 47.625rem) {
         font-size: 1rem;
+    }
+
+    @media (width: 23.438rem) and (height: 47.875rem) {
+        position: relative;
+        right: 0.6rem;
+        font-size: 1rem;
+    }
+
+    @media (width: 23.438rem) and (height: 41.688rem) {
+        position: relative;
+        right: 0.6rem;
+        font-size: 1rem;
+    }
+
+    @media (width: 22.5rem) and (height: 40rem) {
+        position: relative;
+        right: 0.6rem;
+        font-size: 1rem;
+    }
+
+    @media screen and (max-width: 20rem) {
+        position: relative;
+        right: 0.6rem;
+        font-size: 1rem;    
     }
 
     @media (width: 20rem) and (height: 47.625rem) {
@@ -451,29 +523,66 @@ const WhatTheGameIs = styled.h2`
     }
     
     @media (width: 20rem) and (height: 35.5rem) {
-        font-size: 0.8rem;
+        font-size: 1.125rem;
     }
 `
 
-const UnorderedList = styled.ul`
+const TheActualForm = styled.form`
     position: relative;
-    right: 1.3rem;
-    bottom: 3.5rem;
+    bottom: 2rem;
 
-    @media screen and (max-width: 48rem) {
+    @media screen and (max-width: 64rem) {
         position: relative;
-        right: 1.5rem;
+        right: 0.5rem;
+        bottom: 1.5rem;
+    }
+
+    .userInput {
+        font-size: 0.875rem;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        border-radius: 0.25rem;
+        box-sizing: border-box;
+        border: solid 0.188rem black;
+        height: 2rem;
+    }
+
+    .userSubmit {
+        position: relative;
+        left: 0.5rem;
+        background-color: black;
+        :hover {color: white};
+        transition: color .1s;
+        font-size: 1.5rem;
+        font-weight: bolder;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        color: pink;
+        border-radius: 0.8rem;
+        box-sizing: border-box;
+        border: solid 0.188rem black;
+        width: 8rem;
+
+        @media (width: 48rem) and (height: 64rem) {
+            font-size: 1.5rem;
+        }
+
+        @media (width: 48rem) and (height: 47.875rem) {
+            font-size: 1.5rem;
+        }
+
+        @media (width: 48rem) and (height: 47.625rem) {
+            font-size: 1.5rem;
+        }
     }
 `
 
 const Text = styled.p`
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 0.875rem;
+    font-size: 1.5rem;
     font-weight: bolder;
     color: black;
 
     @media screen and (max-width: 64rem) {
-        font-size: 0.875rem;
+        font-size: 1.25rem;
     }
 
     @media (width: 64rem) and (height: 85.375rem) {
@@ -509,7 +618,7 @@ const Text = styled.p`
     }
 
     @media (width: 23.438rem) and (height: 50.75rem) {
-        font-size: 1rem;
+        font-size: 1.125rem;
     }
 
     @media (width: 23.438rem) and (height: 47.625rem) {
@@ -521,13 +630,12 @@ const Text = styled.p`
     }
 
     @media (width: 20rem) and (height: 35.5rem) {
-        font-size: 0.8rem;
+        font-size: 1rem;
     }
 `
 
 class PostScore extends Component {
     state = {
-        showModal: false,
         clickHome: false
     };
 
@@ -558,42 +666,39 @@ handleSubmit = (event) => {
 
 render() {
     return (
-        <HowToPlayBackground>
+        <PostScoreBackground>
                 <CardWrapper>
-                    <StyledHowToPlay>
-                        <HowToPlayTitle>
+                    <StyledCongrats>
+                        <CongratsTitle>
                             Congratulations, You made it to the Leaderboard!
-                        </HowToPlayTitle>
-                        <WhatTheGameIs>
+                        </CongratsTitle>
+                        <ScoreSubmit>
                         Submit your score below
-                        </WhatTheGameIs>
-                        <UnorderedList>   
-                        <div>
-                        <form onSubmit={this.handleSubmit.bind(this)} >
-                         <Text>
-                        <input  
-                            type="text"
-                            placeholder="Enter your name"
-                            value={this.state.name}
-                            required
-                            maxLength="3"
-                            onChange={this.onChangeName.bind(this)}
-                        />
-                        </Text>
-                        <Text>
-                        <p>Streak: {this.props.currentScore}</p>
-                        </Text>
-                        <input 
-                            type="submit"
-                            value="Submit"
-                            onClick= {() => {window.open("/","_self")}}
-                        />
-                        </form>
-                        </div>
-                        </UnorderedList>
-                    </StyledHowToPlay>
+                        </ScoreSubmit>  
+                        <TheActualForm onSubmit={this.handleSubmit.bind(this)}
+                        >
+                            <input
+                                className="userInput"  
+                                type="text"
+                                placeholder="Enter Your Initials"
+                                value={this.state.name}
+                                required
+                                maxLength="3"
+                                onChange={this.onChangeName.bind(this)}
+                            />
+                            <Text>
+                                Streak: {this.props.currentScore}
+                            </Text>
+                            <input
+                                className="userSubmit" 
+                                type="submit"
+                                value="Submit"
+                                onClick= {() => {window.open("/","_self")}}
+                            />
+                        </TheActualForm>
+                    </StyledCongrats>
                 </CardWrapper>
-            </HowToPlayBackground>
+            </PostScoreBackground>
     )
     } }
 
