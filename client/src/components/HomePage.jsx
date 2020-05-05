@@ -260,7 +260,7 @@ class HomePage extends React.Component {
             case null:
                 return;
             case false:
-                return <button type='submit' onClick= {() => {window.open("/auth/google")}} style={{
+                return <button type='submit' onClick= {() => {window.open("/auth/google","_self")}} style={{
                     backgroundColor: 'black',
                     color: 'pink',
                     // 'a:hover': {color: 'white'},
@@ -279,7 +279,7 @@ class HomePage extends React.Component {
                 }}
                     >Login with Google</button>
             default: 
-                return <button type='submit' onClick= {() => {window.open("/api/logout")}} style={{
+                return <button type='submit' onClick= {() => {window.open("/api/logout","_self")}} style={{
                     backgroundColor: 'black',
                     color: 'pink',
                     // 'a:hover': {color: 'white'},
@@ -336,7 +336,6 @@ class HomePage extends React.Component {
                 </StyledStartGame>
             </StartGameBackground>
             
-
         )} else if (this.state.clickedGame === true && this.state.clickedHowTo === false && this.state.clickedLeaderboard === false) {
             return <SelectDifficulty/>
     }      else if (this.state.clickedGame === false && this.state.clickedHowTo === true && this.state.clickedLeaderboard === false) {

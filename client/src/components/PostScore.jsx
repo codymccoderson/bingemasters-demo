@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import another_retro_tv from '../another_retro_tv.png';
 import tv_static2 from '../tv_static2.jpg';
-import HomePage from '../components/HomePage';
 
 const PostScoreBackground = styled.div`
 
@@ -527,7 +526,7 @@ const ScoreSubmit = styled.h2`
     }
 `
 
-const TheActualForm = styled.form`
+const TheFormWrapper = styled.div`
     position: relative;
     bottom: 2rem;
 
@@ -675,27 +674,29 @@ render() {
                         <ScoreSubmit>
                         Submit your score below
                         </ScoreSubmit>  
-                        <TheActualForm onSubmit={this.handleSubmit.bind(this)}
-                        >
-                            <input
-                                className="userInput"  
-                                type="text"
-                                placeholder="Enter Your Initials"
-                                value={this.state.name}
-                                required
-                                maxLength="3"
-                                onChange={this.onChangeName.bind(this)}
-                            />
-                            <Text>
-                                Streak: {this.props.currentScore}
-                            </Text>
-                            <input
-                                className="userSubmit" 
-                                type="submit"
-                                value="Submit"
-                                onClick= {() => {window.open("/","_self")}}
-                            />
-                        </TheActualForm>
+                        <TheFormWrapper> 
+                            <form onSubmit={this.handleSubmit.bind(this)}
+                            >
+                                <input
+                                    className="userInput"  
+                                    type="text"
+                                    placeholder="Enter Your Initials"
+                                    value={this.state.name}
+                                    required
+                                    maxLength="3"
+                                    onChange={this.onChangeName.bind(this)}
+                                />
+                                <Text>
+                                    Streak: {this.props.currentScore}
+                                </Text>
+                                <input
+                                    className="userSubmit" 
+                                    type="submit"
+                                    value="Submit"
+                                    onClick= {() => {window.open("/","_self")}}
+                                />
+                            </form>
+                        </TheFormWrapper>
                     </StyledCongrats>
                 </CardWrapper>
             </PostScoreBackground>

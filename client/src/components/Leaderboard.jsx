@@ -502,11 +502,11 @@ class Leaderboard extends React.Component {
                                     {list.map((item) => {
                                         return(
                                             <tbody>
-                                            <tr>
-                                                <th>{item.name}</th>
+                                                <tr>
+                                                    <th>{item.name}</th>
                                                 
-                                                <th>{item.score}</th>
-                                            </tr>
+                                                    <th>{item.score}</th>
+                                                </tr>
                                             </tbody>
                                         );
                                     })}
