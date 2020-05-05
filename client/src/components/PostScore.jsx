@@ -525,41 +525,6 @@ const Text = styled.p`
     }
 `
 
-const ButtonLine = styled.div`
-    display: flex;
-    position: relative;
-    bottom: 4.5rem;
-
-
-    @media screen and (max-width: 46.875rem) {
-        margin: 0 22.5rem;
-    }
-
-    @media screen and (max-width: 43.75rem) {
-        margin: 0 21.25rem;
-    }
-
-    @media screen and (max-width: 42.188rem) {
-        margin: 0 20rem;
-    }
-
-    @media screen and (max-width: 40.625rem) {
-        margin: 0 18.75rem;
-    }
-
-    @media screen and (max-width: 39.063rem) {
-        margin: 0 18.125rem;
-    }
-
-    @media screen and (max-width: 37.5rem) {
-        margin: 0 16.875rem;
-    }
-
-    @media screen and (max-width: 35.938rem) {
-        margin: 0 14.688rem;
-    }
-`
-
 class PostScore extends Component {
     state = {
         showModal: false,
@@ -570,11 +535,7 @@ class PostScore extends Component {
         this.setState({
             name: e.target.value
         });
-    }
-
-    handleOpenModal () {
-        this.setState({ showModal: true });
-      }    
+    }  
 
 handleSubmit = (event) => {
     // Remove this and pop up score submitted modal screen?
@@ -606,10 +567,8 @@ render() {
                         <WhatTheGameIs>
                         Submit your score below
                         </WhatTheGameIs>
-                        <UnorderedList>
-                            
+                        <UnorderedList>   
                         <div>
-                       
                         <form onSubmit={this.handleSubmit.bind(this)} >
                          <Text>
                         <input  
@@ -624,19 +583,14 @@ render() {
                         <Text>
                         <p>Streak: {this.props.currentScore}</p>
                         </Text>
-                        
                         <input 
                             type="submit"
                             value="Submit"
                             onClick= {() => {window.open("/","_self")}}
                         />
                         </form>
-                        <Modal/>
                         </div>
-                            </UnorderedList>
-                        <ButtonLine>
-                         
-                        </ButtonLine>
+                        </UnorderedList>
                     </StyledHowToPlay>
                 </CardWrapper>
             </HowToPlayBackground>
