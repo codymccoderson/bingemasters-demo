@@ -205,37 +205,14 @@ const StyledLeaderboard = styled.div`
         height: 30rem;
     }
 
-    @media screen and (max-width: 61.875rem) {
-        margin: 0 19rem;
-        width: 23.75rem;
-        height: 23.75rem;
-    }
-
-    @media screen and (max-width: 58.75rem) {
-        width: 22.5rem;
-        height: 22.5rem;
-    }
-
-    @media screen and (max-width: 55.625rem) {
-        margin: 0 18.25rem;
-        width: 21.25rem;
-        height: 21.25rem;
-    }
-
-    @media screen and (max-width: 49.375rem) {
-        margin: 0 16.25rem;
-        width: 28.75rem;
-        height: 28.75rem;
-    }
-
-    @media screen and (max-width: 48rem) {
+    /* @media screen and (max-width: 48rem) {
         position: relative;
         top: 2rem;
         right: 2rem;
         margin: 0 18rem;
         width: 27.5rem;
         height: 27.5rem;
-    }
+    }  */
 
     @media screen and (max-width: 43.125rem) {
         margin: 0 17rem;
@@ -272,76 +249,59 @@ const StyledLeaderboard = styled.div`
 
 const LeaderboardTitle = styled.h1`
     font-family: 'Retro', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 48px;
+    font-size: 3rem;
     text-align: center;
     position: relative;
-    left: 15px;
-    @media screen and (max-width: 1400px) {
-        font-size: 42px;
-    }
-    @media screen and (max-width: 1200px) {
-        font-size: 36px;
+    left: 0.938rem;
+
+    @media screen and (max-width: 81.25rem) {
         position: relative;
-        left: 20px;
+        left: 2.5rem;
     }
-    @media screen and (max-width: 1000px) {
-        font-size: 32px;
+
+    @media screen and (max-width: 64rem) {
         position: relative;
-        left: 20px;
-    }
-    @media screen and (max-width: 1000px) {
-        font-size: 32px;
-        position: relative;
-        left: 7px;
+        bottom: 3rem;
+        left: 3.5rem;
     }
 `;
 
 const LeaderboardTable = styled.table`
     list-style-type: none;
     position: relative;
-    left: 230px;
-    @media screen and (max-width: 1200px) {
+    left: 12.5rem;
+
+    @media screen and (max-width: 64rem) {
         position: relative;
-        left: 180px;
+        left: 13rem;
+        bottom: 0.5rem;
     }
-    @media screen and (max-width: 850px) {
-        position: relative;
-        left: 160px;
-    }
+
     th {
         -webkit-columns: 2;
         -moz-columns: 2;
         columns: 2;
-        -webkit-column-gap: 18em;
-        -moz-column-gap: 18em;
-        column-gap: 18em;
+        -webkit-column-gap: 22rem;
+        -moz-column-gap: 22rem;
+        column-gap: 22rem;
         font-weight: bolder;
         font-size: 20px;
-        @media screen and (max-width: 1400px) {
-            -webkit-column-gap: 16em;
-            -moz-column-gap: 16em;
-            column-gap: 16em;
-        }
-        @media screen and (max-width: 1300px) {
+    
+        @media screen and (max-width: 81.25rem) {
             -webkit-column-gap: 15em;
             -moz-column-gap: 15em;
             column-gap: 15em;
         }
-        @media screen and (max-width: 1200px) {
-            -webkit-column-gap: 12em;
-            -moz-column-gap: 12em;
-            column-gap: 12em;
-        }
     }
+
     td {
-        font-size: 24px;
+        font-size: 1.5rem;
         font-weight: bolder;
         color: pink;
         text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
     }
     
 `
-
 
 const ButtonLine = styled.div`
     display: flex;
@@ -353,19 +313,25 @@ const ReturnHomeButton = styled.button`
     :hover {color: white};
     transition: color .1s;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 18px;
-    padding: 10px;
-    margin: 5px;
-    width: 150px;
-    border-radius: 8px;
+    font-size: 1.125rem;
+    padding: 0.625rem;
+    margin: 0.313rem;
+    width: 9.375rem;
+    border-radius: 0.5rem;
     box-sizing: border-box;
-    border: solid 3px black;
+    border: solid 0.188rem black;
     position: relative;
-    top: 50px;
-     
-    @media screen and (max-width: 850px) {
-        font-size: 14px;
-        width: 120px;
+    top: 8rem;
+
+    @media screen and (max-width: 81.25rem) {
+        position: relative;
+        left: 1.8rem;
+    }
+
+    @media screen and (max-width: 64rem) {
+        position: relative;
+        left: 3rem;
+        top: 4rem;
     }
 `;
 
@@ -467,9 +433,9 @@ class Leaderboard extends React.Component {
                 return;
             default: 
                 return <PostScore/>
-
         }
     }
+
     formHandler(formFields) {
     axios.post('/api/scores/post', formFields)
         .then(function(response){
@@ -495,7 +461,8 @@ class Leaderboard extends React.Component {
                             <LeaderboardTitle>
                                 Greatest Bingemasters
                             </LeaderboardTitle>
-                            <div className="LeaderboardWrapper" style={{overflowX: 'hidden', overflowY:'scroll', border:'1px black'}}>
+                            <div className="LeaderboardWrapper" style={{overflowX: 'hidden', overflowY:'scroll', border:'1px black'}}
+                            >
                                 <LeaderboardTable>
                                     {list.length ? (
                                     <div>
@@ -513,10 +480,16 @@ class Leaderboard extends React.Component {
                                     </div>
                                     ) : (
                                         <span>
-                                            <p style={{fontSize: '1rem', transform: `translate(${-230}px, ${0}px)`}}>Users must login to see the leaderboard</p>
+                                            <p 
+                                                style={{
+                                                fontSize: '1rem', 
+                                                transform: `translate(${-200}px, ${0}px)`,
+                                                }}
+                                            >
+                                                Users must login to see the leaderboard
+                                            </p>
                                         </span>
-                                    )
-                                    }
+                                    )}
                                 </LeaderboardTable>
                             <ButtonLine>
                             </ButtonLine>
