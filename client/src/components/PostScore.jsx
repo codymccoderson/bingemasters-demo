@@ -445,11 +445,13 @@ const ScoreSubmit = styled.h2`
 const TheFormWrapper = styled.div`
     position: relative;
     bottom: 2rem;
+
     @media screen and (max-width: 64rem) {
         position: relative;
         right: 0.5rem;
         bottom: 1.5rem;
     }
+
     .userInput {
         font-size: 0.875rem;
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -458,6 +460,7 @@ const TheFormWrapper = styled.div`
         border: solid 0.188rem black;
         height: 2rem;
     }
+
     .userSubmit {
         position: relative;
         left: 0.5rem;
@@ -472,12 +475,15 @@ const TheFormWrapper = styled.div`
         box-sizing: border-box;
         border: solid 0.188rem black;
         width: 8rem;
+
         @media (width: 48rem) and (height: 64rem) {
             font-size: 1.5rem;
         }
+
         @media (width: 48rem) and (height: 47.875rem) {
             font-size: 1.5rem;
         }
+
         @media (width: 48rem) and (height: 47.625rem) {
             font-size: 1.5rem;
         }
@@ -572,28 +578,26 @@ render() {
                         Submit your score below
                         </ScoreSubmit>
                         <TheFormWrapper>
-                       
-                        <form onSubmit={this.handleSubmit.bind(this)} >
-                   
-                            <input  
-                                type="text"
-                                placeholder="Enter your name"
-                                value={this.state.name}
-                                required
-                                maxLength="3"
-                                onChange={this.onChangeName.bind(this)}
-                            />
-                            
-                            <Text>
-                            <p>Streak: {this.props.currentScore}</p>
-                            </Text>
-                        
-                            <input 
-                                type="submit"
-                                value="Submit"
-                                onClick= {() => {window.open("/","_self")}}
-                            />
-                        </form>
+                            <form onSubmit={this.handleSubmit.bind(this)} >
+                                <input
+                                    className="userInput"  
+                                    type="text"
+                                    placeholder="Enter your name"
+                                    value={this.state.name}
+                                    required
+                                    maxLength="3"
+                                    onChange={this.onChangeName.bind(this)}
+                                />
+                                <Text>
+                                <p>Streak: {this.props.currentScore}</p>
+                                </Text>
+                                <input
+                                    className="userSubmit" 
+                                    type="submit"
+                                    value="Submit"
+                                    onClick= {() => {window.open("/","_self")}}
+                                />
+                            </form>
                         </TheFormWrapper>
                     </StyledCongrats>
                 </CardWrapper>
