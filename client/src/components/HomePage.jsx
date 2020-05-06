@@ -6,7 +6,6 @@ import tv_static2 from '../tv_static2.jpg';
 import { connect } from 'react-redux';
 import SelectDifficulty from './SelectDifficulty';
 import silhouette from '../silhouette.jpg';
-import PostScore from './PostScore';
 
 const StartGameBackground = styled.div`
     background: url(${tv_static2}) no-repeat center center fixed;
@@ -23,32 +22,26 @@ const StyledStartGame = styled.div`
     margin: 0 auto;
     position: relative;
     top: 4rem;
-
     @media screen and (max-width: 60rem) {
         position: relative;
         top: 1rem;    
     }
-
     @media (width: 23.438rem) and (height: 50.75rem) {
         position: relative;
         top: 2.5rem;
     }
-
     @media (width: 23.438rem) and (height: 41.688rem) {
         position: relative;
         top: -1rem;
     }
-
     @media (width: 22.5rem) and (height: 40rem) {
         position: relative;
         top: -1.5rem;
     }
-
     @media screen and (max-width: 20rem) {
         position: relative;
         top: 3rem;
     }
-
     @media (width: 20rem) and (height: 35.5rem) {
         position: relative;
         top: -1rem;
@@ -61,11 +54,9 @@ const StartGameTitle = styled.h1`
     font-size: 5rem;
     font-weight: bolder;
     text-shadow: -1.1px 0 black, 0 1.1px black, 1.1px 0 black, 0 -1.1px black;
-
     @media screen and (max-width: 40.625rem) {
         font-size: 3.25rem;
     }
-
     @media screen and (max-width: 26.563rem) {
         font-size: 3rem;
         position: relative;
@@ -76,17 +67,14 @@ const StartGameTitle = styled.h1`
         position: relative;
         top: 0.6rem;
     }
-
     @media screen and (max-width: 20rem) {
         font-size: 2.5rem;
     }    
 `;
 
 const ImageWrapper = styled.div`
-
     position: relative;
     bottom: 2rem;
-
     .theActorImg {
         border-radius: 0.625rem;
         box-sizing: border-box;
@@ -95,19 +83,16 @@ const ImageWrapper = styled.div`
         height: 20rem;
         position: relative;
         top: -0.5rem;
-
         @media screen and (max-width: 60rem) {
             width: 18rem;
             height: 18rem;
             position: relative;
             top: 0rem;
         }
-
         @media (width: 48rem) and (height: 47.938rem) {
             position: relative;
             top: -0.5rem;
         }
-
         @media (width: 26.563rem) and (height: 47.938rem) {
             position: relative;
             top: 0.8rem;
@@ -117,29 +102,24 @@ const ImageWrapper = styled.div`
             position: relative;
             top: 0.8rem;
         }
-
         @media (width: 25.688rem) and (height: 51.438rem) {
             position: relative;
             top: 0.8rem;
         }
-
         @media (width: 25.688rem) and (height: 45.688rem) {
             position: relative;
             top: 0.8rem;
         }
-
         @media screen and (max-width: 23.438rem) {
             position: relative;
             top: 0.8rem;
         }
-
         @media screen and (max-width: 20rem) {
             width: 16rem;
             height: 16rem;
             position: relative;
             top: 1rem;
         }
-
         @media (width: 20rem) and (height: 35.5rem) {
             width: 14rem;
             height: 14rem;    
@@ -152,17 +132,14 @@ const ButtonLine = styled.div`
     position: relative;
     top: 2rem;
     right: 0.5rem;
-
     @media screen and (max-width: 60rem) {
         flex-direction: column;
         position: relative;
         right: 0rem;    
     }
-
     @media (width: 48rem) and (height: 64rem) {
         flex-direction: row;
     }
-
     @media (width: 48rem) and (height: 47.938rem) {
         flex-direction: row;
     }
@@ -222,6 +199,7 @@ const LeaderboardButton = styled.button`
     box-sizing: border-box;
     border: solid 0.188rem black;
 `;
+
 
 class HomePage extends React.Component {
 
