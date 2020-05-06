@@ -1,68 +1,115 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Bingemasters
+![Build Status](https://travis-ci.org/joemccann/dillinger.svg)
 
-## Available Scripts
+See the live demo: <url>
 
-In the project directory, you can run:
+## Description:
 
-### `yarn start`
+Bingemasters is an actor guessing game built on the MERN (Mongo, Express, React, Node.js) stack, where an image of an actor appears on the screen and players attempt to correctly identify the actor. 
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+The goal of the game is to obtain the highest streak/score by consecutively answering correctly within the time limit. In addition, having a high streak allows the user to post to the leaderboard.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+Do you have what it takes to become the ultimate Bingemaster?
 
-### `yarn test`
+## Motivation:
+As [Developer Pete](https://github.com/codymccoderson) remarks:
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+> "The motivation for this came from a similar game that my friends and I play on WhatsApp. Someone on the chat will post two actor names and a year. Whoever responds quickest with the correct movie both actors were involved in gets to drop the next clue. This game is an early prototype based on this idea."
 
-### `yarn build`
+## Main Features:
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Easy and Hard modes, in which users can play by selecting multiple choice options or correctly typing out the actors’ names, respectively. 
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+- Global leaderboard with user-inputted names and rankings based on streaks in descending order.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Passport Google User authentication; Only logged in users can view the leaderboard.
 
-### `yarn eject`
+- Embedded RESTful API to handle GET and POSTs of streaks into a Mongo database.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- Tracks a users’ logged in status through cookie sessions.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- ~~Modal pop-ups based on click events.~~
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Technology:
 
-## Learn More
+Bingemasters also uses a number of open sources projects to work properly:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Front-End:
+  - HTML
+  - CSS
+  - JS
+  - React
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Back-End:
+  - Node.js
+  - Express
+  - MongoDB
 
-### Code Splitting
+- Notable Node Modules | Libraries
+  - Axios
+  - Cookie-Session
+  - Http-Proxy-Middleware
+  - Mongoose
+  - Passport
+  - Passport Google OAuth 2.0
+  - React-Modal
+  - React-Redux
+  - React-Dom
+  - React-Router-Dom
+  - React-Redux
+  - Redux-Thunk
+  - Styled-Components
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+- API:
+  - TMDB
+    - https://developers.themoviedb.org/3/getting-started/introduction
 
-### Analyzing the Bundle Size
+## Installation
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+Install the dependencies and devDependencies and start the server.
 
-### Making a Progressive Web App
+Back-End
+```sh
+$ npm i
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+Front-End
+```sh
+$ cd client
+$ npm i
+```
 
-### Advanced Configuration
+Have two separate terminals open...
+At the folder's top level directory:
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+Back-End
+```sh
+$ npm run dev
+```
 
-### Deployment
+Front-End
+```sh
+$ cd client
+$ npm start
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+### *App will only work on the client-side - There are secret files missing (This was intentional)*
 
-### `yarn build` fails to minify
+## Roadmaps:
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+- Transition to React Native for Mobile release.
+- Refactor Passport.js (Google strategy) for less messy code.
+- Refactor modal behaviors.
+- Other TOP SECRET features.
+
+## Development Repos: 
+Front-End: https://github.com/codymccoderson/bingemasters-mini/tree/newbackgroundswag/src
+
+Back-End: https://github.com/codymccoderson/bingemasters-backend
+
+## Developers:
+
+Front-End aka 'Style God': https://github.com/codymccoderson
+
+Back-End: https://github.com/TheCaptainFalcon
