@@ -23,6 +23,7 @@ const HTMLWrapper = styled.div`
 
     }     
 `
+
 const CardWrapper = styled.div`
 
     @media screen and (max-width: 64rem) {
@@ -639,6 +640,7 @@ const OptionOne = styled.button`
         font-size: 0.688rem;
     }   
 `
+
 const OptionTwo = styled.button`
     background-color: pink;
     :hover {color: white};
@@ -714,6 +716,7 @@ const OptionTwo = styled.button`
         font-size: 0.688rem;
     }    
 `
+
 const OptionThree = styled.button`
     background-color: pink;
     :hover {color: white};
@@ -789,6 +792,7 @@ const OptionThree = styled.button`
         font-size: 0.688rem;
     }   
 `
+
 const OptionFour = styled.button`
     background-color: pink;
     :hover {color: white};
@@ -976,6 +980,7 @@ const TimeAndScoreWrapper = styled.div`
         }
     }
 `
+
 const ButtonLine2 = styled.div`
     display: flex;
     position: relative;
@@ -1139,7 +1144,7 @@ class MultipleChoice extends React.Component {
         actorName: "",
         movieName: "",
         secondMovieName: "",
-        count: 10000,
+        count: 60,
         resetTimer: false,
         currentScore: 0,
         wrongAnswer: false,

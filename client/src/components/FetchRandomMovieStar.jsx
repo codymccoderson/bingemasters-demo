@@ -396,10 +396,12 @@ const ImageWrapper = styled.div`
         }   
     }   
 `
+
 const FormWrapper = styled.div`
     position: relative;
     bottom: 2.5rem;
 `
+
 const TheActualForm = styled.form`
     
     .userInput {
@@ -485,6 +487,7 @@ const TheActualForm = styled.form`
             left: 0.4rem;
         }
     }
+
     .userSubmitButton {
         background-color: pink;
         font-size: 0.875rem;
@@ -562,6 +565,7 @@ const TheActualForm = styled.form`
         }
     }
 `
+
 const TimeAndScoreWrapper = styled.div`
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     text-align: center;
@@ -681,6 +685,7 @@ const ButtonLine2 = styled.div`
         bottom: 4.5rem;
     }
 `
+
 const QuitButton = styled.button`
     background-color: black;
     :hover {color: white};
@@ -774,7 +779,7 @@ class FetchRandomMovieStar extends React.Component {
         actorName: "",
         movieName: "",
         secondMovieName: "",
-        count: 10000,
+        count: 60,
         resetTimer: false,
         currentScore: 0,
         gameOver: false,

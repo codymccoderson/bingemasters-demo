@@ -282,8 +282,8 @@ class HomePage extends React.Component {
                 return <button type='submit' onClick= {() => {window.open("/api/logout","_self")}} style={{
                     backgroundColor: 'black',
                     color: 'pink',
-                    // 'a:hover': {color: 'white'},
-                    // transition: {color: '.1s'},
+                    'a:hover': {color: 'white'},
+                    transition: {color: '.1s'},
                     fontFamily: 'Gill Sans', 'Gill Sans MT': 'Calibri', 'TrebuchetMS': 'sansSerif',
                     fontSize: '1rem',
                     padding: '0.625rem',
