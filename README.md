@@ -2,7 +2,7 @@
 ![Build Status](https://travis-ci.org/joemccann/dillinger.svg)
 
 See the (temporary) live demo: https://bingemasters-host.web.app/
-*Authentication is down at the moment*
+#### *Authentication is down at the moment*
 
 ## Description:
 
