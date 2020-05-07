@@ -4,6 +4,9 @@
 See the (temporary) live demo: https://bingemasters-host.web.app/
 #### *Authentication is down at the moment*
 
+![](bingemasters-main.gif)
+![](bingemasters-gameplay.gif)
+
 ## Description:
 
 Bingemasters is an actor guessing game built on the MERN (Mongo, Express, React, Node.js) stack, where an image of an actor appears on the screen and players attempt to correctly identify the actor. 
