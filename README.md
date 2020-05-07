@@ -1,7 +1,8 @@
 # Bingemasters
 ![Build Status](https://travis-ci.org/joemccann/dillinger.svg)
 
-See the live demo: <url>
+See the (temporary) live demo: https://bingemasters-host.web.app/
+*Authentication is down at the moment*
 
 ## Description:
 
