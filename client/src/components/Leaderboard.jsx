@@ -45,10 +45,7 @@ const CardWrapper = styled.div`
     }
 
     @media screen and (max-width: 48rem) {
-        position: relative;
-        top: 5rem;
-        margin: 0 8rem;
-        height: 32rem;   
+        margin: 0 8rem;  
     } 
 
     @media (width: 48rem) and (height: 64rem) {
@@ -172,28 +169,21 @@ const StyledLeaderboard = styled.div`
     }
 
     @media screen and (max-width: 80.625rem) {
-        margin: 0 22.5rem;
+        margin: 0 23.5rem;
         width: 33.75rem;
         height: 33.75rem;
     }
 
-    @media screen and (max-width: 77.5rem) {
-        width: 31.25rem;
-        height: 31.25rem;
-    }
-
     @media screen and (max-width: 74.375rem) {
-        width: 28.75rem;
-        height: 28.75rem;
+        margin: 0 20.5rem;
     }
 
     @media screen and (max-width: 71.25rem) {
-        width: 26.25rem;
-        height: 26.25rem;
+        margin: 0 18.5rem;
     }
 
     @media screen and (max-width: 68.125rem) {
-        margin: 0 23rem;
+        margin: 0 17.5rem;
     }
 
     @media screen and (max-width: 64rem) {
@@ -201,35 +191,20 @@ const StyledLeaderboard = styled.div`
         top: 3.5rem;
         right: 3.5rem;
         margin: 0 17.5rem;
-        width: 30rem;
-        height: 30rem;
+        width: 34rem;
+        height: 34rem;
     }
-
-    /* @media screen and (max-width: 48rem) {
-        position: relative;
-        top: 2rem;
-        right: 2rem;
-        margin: 0 18rem;
-        width: 27.5rem;
-        height: 27.5rem;
-    }  */
 
     @media screen and (max-width: 43.125rem) {
         margin: 0 17rem;
-        width: 26.25rem;
-        height: 26.25rem;
     }
 
     @media screen and (max-width: 41.6rem) {
         margin: 0 16rem;
-        width: 25rem;
-        height: 25rem;
     }
 
     @media screen and (max-width: 40.8rem) {
         margin: 0 13rem;
-        width: 25rem;
-        height: 25rem;
     }
 
     @media screen and (max-width: 40rem) {
@@ -267,27 +242,36 @@ const LeaderboardTitle = styled.h1`
 `;
 
 const LeaderboardTableWrapper = styled.div`
+
     list-style-type: none;
     position: relative;
     left: 0.75rem;
     bottom: 0.5rem;
     overflow-x: hidden;
     overflow-y: scroll;
-    border: solid 0.188rem black;
-    border-radius: 0.5rem;
     width: 31.25rem;
 
     @media screen and (max-width: 64rem) {
         position: relative;
-        left: 13rem;
-        bottom: 0.5rem;
+        left: 6.75rem;
+        bottom: 3rem;
     }
 
     .notLoggedInLeaderboardText {
         position: relative;
-        left: 9.5rem;
+        left: 4rem;
         font-size: 1.125rem;
         white-space: nowrap;
+
+        @media screen and (max-width: 80.625rem) {
+            position: relative;
+            left: 6rem;
+        }
+
+        @media screen and (max-width: 64rem) {
+            position: relative;
+            left: 1rem;
+        }
     }
 
     td {
@@ -307,12 +291,25 @@ const LeaderboardTableWrapper = styled.div`
         column-gap: 22rem;
         font-weight: bolder;
         font-size: 20px;
-    
-        @media screen and (max-width: 81.25rem) {
-            -webkit-column-gap: 15rem;
-            -moz-column-gap: 15rem;
-            column-gap: 15rem;
-        }
+
+    @media screen and (max-width: 80.625rem) {
+       position: relative;
+       left: 3rem;
+       -webkit-column-gap: 20rem;
+        -moz-column-gap: 20rem;
+        column-gap: 20rem;
+
+    }
+
+    @media screen and (max-width: 64rem) {
+        position: relative;
+        left: 0rem;
+        top: 0rem;
+        -webkit-column-gap: 17rem;
+        -moz-column-gap: 17rem;
+        column-gap: 17rem;
+    }
+
     }
     
 `
@@ -345,7 +342,7 @@ const ReturnHomeButton = styled.button`
     @media screen and (max-width: 64rem) {
         position: relative;
         left: 3rem;
-        top: 4rem;
+        top: 1rem;
     }
 `;
 
@@ -376,7 +373,10 @@ class Leaderboard extends React.Component {
         // Remove this and pop up score submitted modal screen?
         event.preventDefault();
         //(event.target)
-        const data = {name: this.state.name, score: this.props.currentScore}
+        const data = {
+            name: this.state.name, 
+            score: this.props.currentScore
+        };
         
         fetch('http://localhost:5000/api/scores/post', {
             method: 'POST',
@@ -390,24 +390,7 @@ class Leaderboard extends React.Component {
             
         });
     }
-
-    // handleSubmit(e){
-    //     e.preventDefault();
-        
-    //     const userScore = {
-    //         name : this.state.name,
-    //         score: this.state.score
-    //     };
-
-    //     axios.post('localhost:5000/api/scores/post', userScore)
-    //         .then(res => console.log(res.data))
-
-    //     this.setState({
-    //         name: '', 
-    //         score:''
-    //     })
-    // }
-
+    
     inputChangeHandler(e) {
         let formFields = {...this.state.formFields};
         formFields[e.target.name] = e.target.value;
@@ -433,9 +416,17 @@ class Leaderboard extends React.Component {
             case null:
                 return;
             case false:
-                return <li><a href="/auth/google">Login With Google</a></li>
+                return <li>
+                            <a href="/auth/google"
+                            >Login With Google
+                            </a>
+                        </li>
             default: 
-                return <li><a href="/api/logout">Logout</a></li>
+                return <li>
+                            <a href="/api/logout">
+                                Logout
+                            </a>
+                        </li>
         }
     }
 
@@ -477,21 +468,24 @@ class Leaderboard extends React.Component {
                             </LeaderboardTitle>
                                 <LeaderboardTableWrapper>
                                     {list.length ? (
-                                    <table className="tableData">
+                                    <table>
                                     {list.map((item) => {
                                         return(
                                             <tbody>
                                                 <tr>
-                                                    <td>{item.name}</td>
-                                                
-                                                    <td>{item.score}</td>
+                                                    <td>
+                                                        {item.name}
+                                                    </td>
+                                                    <td>
+                                                        {item.score}
+                                                    </td>
                                                 </tr>
                                             </tbody>
                                         );
                                     })}
                                     </table>
                                     ) : (
-                                    <table className="tableData">
+                                    <table>
                                         <tbody>
                                             <tr>
                                                 <td className="notLoggedInLeaderboardText">
