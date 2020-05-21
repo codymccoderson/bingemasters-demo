@@ -266,10 +266,16 @@ const LeaderboardTitle = styled.h1`
     }
 `;
 
-const LeaderboardTable = styled.table`
+const LeaderboardTableWrapper = styled.div`
     list-style-type: none;
     position: relative;
-    left: 12.5rem;
+    left: 0.75rem;
+    bottom: 0.5rem;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    border: solid 0.188rem black;
+    border-radius: 0.5rem;
+    width: 31.25rem;
 
     @media screen and (max-width: 64rem) {
         position: relative;
@@ -277,7 +283,22 @@ const LeaderboardTable = styled.table`
         bottom: 0.5rem;
     }
 
-    th {
+    .notLoggedInLeaderboardText {
+        position: relative;
+        left: 9.5rem;
+        font-size: 1.125rem;
+        white-space: nowrap;
+    }
+
+    td {
+        font-size: 1.5rem;
+        font-weight: bolder;
+        color: pink;
+        text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+        position: relative;
+        left: 0.75rem;
+        top: 0.25rem;
+
         -webkit-columns: 2;
         -moz-columns: 2;
         columns: 2;
@@ -288,17 +309,10 @@ const LeaderboardTable = styled.table`
         font-size: 20px;
     
         @media screen and (max-width: 81.25rem) {
-            -webkit-column-gap: 15em;
-            -moz-column-gap: 15em;
-            column-gap: 15em;
+            -webkit-column-gap: 15rem;
+            -moz-column-gap: 15rem;
+            column-gap: 15rem;
         }
-    }
-
-    td {
-        font-size: 1.5rem;
-        font-weight: bolder;
-        color: pink;
-        text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
     }
     
 `
@@ -321,7 +335,7 @@ const ReturnHomeButton = styled.button`
     box-sizing: border-box;
     border: solid 0.188rem black;
     position: relative;
-    top: 8rem;
+    top: 1rem;
 
     @media screen and (max-width: 81.25rem) {
         position: relative;
@@ -398,7 +412,7 @@ class Leaderboard extends React.Component {
         let formFields = {...this.state.formFields};
         formFields[e.target.name] = e.target.value;
         this.setState({
-         formFields
+            formFields
         });
        }
     
@@ -461,44 +475,40 @@ class Leaderboard extends React.Component {
                             <LeaderboardTitle>
                                 Greatest Bingemasters
                             </LeaderboardTitle>
-                            <div className="LeaderboardWrapper" style={{overflowX: 'hidden', overflowY:'scroll', border:'1px black'}}
-                            >
-                                <LeaderboardTable>
+                                <LeaderboardTableWrapper>
                                     {list.length ? (
-                                    <div>
+                                    <table className="tableData">
                                     {list.map((item) => {
                                         return(
                                             <tbody>
                                                 <tr>
-                                                    <th>{item.name}</th>
+                                                    <td>{item.name}</td>
                                                 
-                                                    <th>{item.score}</th>
+                                                    <td>{item.score}</td>
                                                 </tr>
                                             </tbody>
                                         );
                                     })}
-                                    </div>
+                                    </table>
                                     ) : (
-                                        <span>
-                                            <p 
-                                                style={{
-                                                fontSize: '1rem', 
-                                                transform: `translate(${-200}px, ${0}px)`,
-                                                }}
-                                            >
-                                                Users must login to see the leaderboard
-                                            </p>
-                                        </span>
+                                    <table className="tableData">
+                                        <tbody>
+                                            <tr>
+                                                <td className="notLoggedInLeaderboardText">
+                                                    Users must login to see the leaderboard
+                                                </td>  
+                                            </tr>
+                                        </tbody>
+                                    </table>
                                     )}
-                                </LeaderboardTable>
+                                </LeaderboardTableWrapper>
                             <ButtonLine>
+                                <ReturnHomeButton 
+                                    type="submit"
+                                    onClick={this.handleClickReturn.bind(this)}
+                                    >Return Home      
+                                </ReturnHomeButton>
                             </ButtonLine>
-                            </div>
-                            <ReturnHomeButton 
-                                type="submit"
-                                onClick={this.handleClickReturn.bind(this)}
-                                >Return Home      
-                            </ReturnHomeButton>
                         </StyledLeaderboard>
                     </CardWrapper>
                 </LeaderboardBackground>
