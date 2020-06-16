@@ -3,10 +3,12 @@ import styled from 'styled-components';
 import another_retro_tv from '../another_retro_tv.png';
 import tv_static2 from '../tv_static2.jpg';
 import HomePage from './HomePage';
-import SelectDifficultyMultipleChoice from './SelectDifficultyMultipleChoice';
-import SelectDifficultyClassic from './SelectDifficultyClassic';
+import MultipleChoiceEasy from './MultipleChoiceEasy';
+import MultipleChoiceMedium from './MultipleChoiceMedium';
+import MultipleChoiceHard from './MultipleChoiceHard';
 
-const SelectGameModeBackground = styled.div`
+
+const SelectDifficultyBackground = styled.div`
     background: url(${another_retro_tv}) no-repeat center center fixed;
     background-size: 80vw 92vh;
     height: 100vh; 
@@ -17,7 +19,7 @@ const SelectGameModeBackground = styled.div`
         height: 100vh;
     }
 `
-const StyledSelectGameMode = styled.div`
+const StyledSelectDifficulty = styled.div`
     display: flex;
     align-items: center;
     flex-flow: column;
@@ -110,7 +112,7 @@ const StyledSelectGameMode = styled.div`
     }
 `;
 
-const SelectGameModeTitle = styled.h1`
+const SelectDifficultyTitle = styled.h1`
     color: black;
     font-family: 'Retro', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 5rem;
@@ -242,7 +244,7 @@ const ButtonLine = styled.div`
     }
 `
 
-const MultipleChoiceButton = styled.button`
+const EasyButton = styled.button`
     background-color: pink;
     color: black;
     :hover {color: white};
@@ -312,7 +314,78 @@ const MultipleChoiceButton = styled.button`
     }
 `;
 
-const ClassicButton = styled.button`
+const MediumButton = styled.button `
+    background-color: pink;
+    color: black;
+    :hover {color: white};
+    transition: color .1s;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.5rem;
+    padding: 0.625rem;
+    margin: 1.25rem;
+    width: 12rem;
+    border-radius: 0.5rem;
+    box-sizing: border-box;
+    border: solid 0.188rem black;
+    position: relative;
+    left: 0.2rem;
+    @media (width: 64rem) and (height: 85.375rem) {
+        font-size: 3rem;
+        width: 27rem;
+        border-radius: 0.8rem;
+    }
+    @media (width: 64rem) and (height: 63.625rem) {
+        font-size: 2rem;
+        width: 15rem;
+        border-radius: 0.8rem;
+    }
+    @media (width: 64rem) and (height: 63.5rem) {
+        font-size: 1.5rem;
+        width: 12rem;
+    }
+    @media (width: 48rem) and (height: 64rem) {
+        font-size: 2rem;
+        width: 18rem;
+    }
+    @media (width: 48rem) and (height: 47.75rem) {
+        font-size: 1.5rem;
+        width: 12rem;        
+    }
+    @media (width: 26.563rem) and (height: 47.75rem) {
+        font-size: 1.2rem;
+        width: 10rem;        
+    }
+    @media (width: 25.688rem) and (height: 51.438rem) {
+        font-size: 1.2rem;
+        width: 10rem;    
+    }
+    @media (width: 25.688rem) and (height: 45.688rem) {
+        font-size: 1.2rem;
+        width: 10rem;
+    }
+    @media (width: 23.438rem) and (height: 47.75rem) {
+        font-size: 1.2rem;
+        width: 10rem;        
+    }
+    @media (width: 23.438rem) and (height: 41.688rem) {
+        font-size: 1.2rem;
+        width: 10rem;    
+    }
+    @media (width: 22.5rem) and (height: 40rem) {
+        font-size: 1.125rem;
+        width: 10rem;
+    }
+    @media (width: 20rem) and (height: 47.75rem) {
+        font-size: 1rem;
+        width: 8rem;
+    }
+    @media (width: 20rem) and (height: 35.5rem) {
+        font-size: 1rem;
+        width: 8rem;
+    }    
+`
+
+const HardButton = styled.button`
     background-color: pink;
     color: black;
     :hover {color: white};
@@ -471,74 +544,94 @@ const HomeButton = styled.button`
     
 `;
 
-class SelectGameMode extends React.Component {
+class SelectDifficultyMultipleChoice extends React.Component {
 
     state = {
-        clickedClassic: false,
-        clickedMultipleChoice: false,
+        clickedEasy: false,
+        clickedMedium: false,
+        clickedHard: false,
         clickedHome: false
     }
 
-    handleClickMultipleChoice () {
+    handleClickEasy () {
         this.setState({
-            clickedClassic: false,
-            clickedMultipleChoice: true,
+          clickedEasy: true,
+          clickedMedium: false,
+          clickedHard: false,
+          clickedHome: false
+        })
+      }
+    
+    handleClickMedium () {
+        this.setState({
+            clickedEasy: false,
+            clickedMedium: true,
+            clickedHard: false,
             clickedHome: false
         })
     }
 
-    handleClickClassic () {
+    handleClickHard () {
         this.setState({
-          clickedClassic: true,
-          clickedMultipleChoice: false,
-          clickedHome: false
+            clickedEasy: false,
+            clickedMedium: false,
+            clickedHard: true,
+            clickedHome: false
         })
-      }
+    }
 
     handleClickHome () {
         this.setState({
-            clickedClassic: false,
-            clickedMultipleChoice: false,
+            clickedEasy: false,
+            clickedMedium: false,
+            clickedHard: false,
             clickedHome: true
         })
     }
 
     render() {
 
-        if (this.state.clickedClassic === false && this.state.clickedMultipleChoice === false && this.state.clickedHome === false) {
+        if (this.state.clickedEasy === false && this.state.clickedMedium === false && this.state.clickedHard === false && this.state.clickedHome === false) {
 
         return(
-            <SelectGameModeBackground>
-                <StyledSelectGameMode>
-                    <SelectGameModeTitle>
+            <SelectDifficultyBackground>
+                <StyledSelectDifficulty>
+                    <SelectDifficultyTitle>
                         Bingemasters
-                    </SelectGameModeTitle>
+                    </SelectDifficultyTitle>
                     <ButtonLine>
-                        <MultipleChoiceButton 
+                        <EasyButton 
                             type="submit"
-                            onClick={this.handleClickMultipleChoice.bind(this)}
-                            >Multiple Choice  
-                        </MultipleChoiceButton>
-                        <ClassicButton
+                            onClick={this.handleClickEasy.bind(this)}
+                            >Easy   
+                        </EasyButton>
+                        <MediumButton
                             type="submit"
-                            onClick={this.handleClickClassic.bind(this)}
-                            >Classic 
-                        </ClassicButton>
+                            onClick={this.handleClickMedium.bind(this)}
+                            >Medium
+                        </MediumButton>
+                        <HardButton
+                            type="submit"
+                            onClick={this.handleClickHard.bind(this)}
+                            >Hard   
+                        </HardButton>
                         <HomeButton
                             type="submit"
                             onClick={this.handleClickHome.bind(this)}
                             >Return Home
                         </HomeButton>
                     </ButtonLine>
-                </StyledSelectGameMode>
-            </SelectGameModeBackground>
-        )} else if (this.state.clickedMultipleChoice === true && this.state.clickedClassic === false && this.state.clickedHome === false) {
-            return <SelectDifficultyMultipleChoice/>
-    }      else if (this.state.clickedMultipleChoice === false && this.state.clickedClassic === true && this.state.clickedHome === false) {
-            return <SelectDifficultyClassic/>
-    }      else if (this.state.clickedMultipleChoice === false && this.state.clickedClassic === false && this.state.clickedHome === true) {
+                </StyledSelectDifficulty>
+            </SelectDifficultyBackground>
+        )} else if (this.state.clickedEasy === true && this.state.clickedMedium === false && this.state.clickedHard === false && this.state.clickedHome === false) {
+            return <MultipleChoiceEasy/>
+    }      else if (this.state.clickedEasy === false && this.state.clickedMedium === true && this.state.clickedHard === false && this.state.clickedHome === false) {
+            return <MultipleChoiceMedium/>
+    }      else if (this.state.clickedEasy === false && this.state.clickedMedium === false && this.state.clickedHard === true && this.state.clickedHome === false) {
+            return <MultipleChoiceHard/>
+    }      else if (this.state.clickedEasy === false && this.state.clickedHard === false && this.state.clickedHome === true) {
             return <HomePage/>
     }
 }}
 
-export default SelectGameMode;
+export default SelectDifficultyMultipleChoice;
